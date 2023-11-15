@@ -2,6 +2,10 @@ html,
 body {
     height: 100%;
 }
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: #FA1818;
+    border-color: #FA1818;
+}
 
 .wrap {
     min-height: 100%;
