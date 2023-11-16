@@ -18,12 +18,12 @@ class CategoryController extends AppController
         if (empty($category)){
             throw new NotFoundHttpException('Такой категории нет');
         }
-        //$this->setMeta($category->title, $category->keywords, $category->description);
+        $this->setMeta($category->title, $category->keywords, $category->description);
        // $products = Product::find()->where(['category_id' =>$id])->all();
         $query = Product::find()->where(['category_id'=>$id]);
         $pages = new Pagination([
             'totalCount' => $query->count(),
-            'pageSize' => 1,
+            'pageSize' => 4,
             'forcePageParam' => false,
             'pageSizeParam' => false
         ]);
@@ -35,7 +35,7 @@ class CategoryController extends AppController
 
     public function actionSearch(){
         $q = trim(\Yii::$app->request->get('q'));
-        //$this->setMeta("Поиск: {$q} :: " . \Yii::$app->name);
+        $this->setMeta("Поиск: {$q} :: " . \Yii::$app->name);
         if (!$q){
             return $this->render('search');
         }
