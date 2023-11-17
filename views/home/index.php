@@ -96,6 +96,10 @@
                                              <?php endif; ?>
                                         </h4>
                                     </div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <a href="<?= \yii\helpers\Url::to(['card/add', 'id' => $offer->id]) ?>" data-id = "<?= $offer->id?>" class="button add-to-card"> Add to cart</a>
+                                        
+                                    </div>
                                 </div>
                             </figure>
                         </div>
